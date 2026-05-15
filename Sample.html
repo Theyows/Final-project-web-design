@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css layout</title>
+    <style>
+        :root
+        {
+            --dark-blue: #1a2371;
+            --medium-blue: #0d47a1;
+            --light-blue: #2196f3;
+            --white: #ffffff;
+            --green: #4caf50;
+        }
+
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--white);
+            padding: 0px;
+            margin: 0px;
+            color: var(--white);
+        }
+
+        header
+        {
+            background: var(--medium-blue);
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        nav
+        {
+            display: flex;
+            justify-content: center;
+            background: var(--light-blue);
+            padding: 10px;
+        }
+
+        nav a
+        {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        @media(max-width: 768px)
+        {
+            nav
+            {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a
+            {
+                margin: 10px 0;
+            }
+
+            .container
+            {
+                display: grid;
+                grid-template-columns: 2fr 1fr; 
+                gap: 20px;
+                padding: 20px;
+            }
+        }
+
+        @media(max-width: 768px)
+        {
+            .container
+            {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section
+        {
+            background: var(--green);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        article
+        {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        .sidebar
+        {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer
+        {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px
+        }
+    </style>
+    </head>
+        <body>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="container">
+                <main>
+                    <section>
+                        <h2>Section 1</h2>
+                        <p>This Section contains important content.</p>
+                        <article>
+                            <h3>Articel 1</h3>
+                            <p>Details about a specific topic within Section 1.</p>
+                        </article>
+                    </section>
+
+                    <section>
+                        <h2>Section 2</h2>
+                        <p>This section holds another topic.</p>
+                        <article>
+                            <h3>Artice 2</h3>
+                            <p>Details about a specific topic within Section 1.</p>
+                    </section>
+                </main>
+            </div>
+
+            <aside>
+                <h2>Sidebar</h2>
+                <p>Additional resources, links, or advertisements go here.</p>
+                </aside>
+            </div>
+
+            <footer>
+                &copy; 2024 CSS Layout Example with Sections & Articles
+            </footer>
+        </body>
+    </html>
